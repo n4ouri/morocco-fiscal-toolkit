@@ -1,0 +1,63 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "morocco-fiscal-toolkit"
+version = "1.0.0"
+authors = [
+  { name="n4ouri", email="contact@fatoura.ma" },
+]
+description = "🇲🇦 Open source public API & Python toolkit for Moroccan tax, DGI e-invoicing, VAT, banking, payroll, and fiscal compliance."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+keywords = [
+  "morocco",
+  "maroc",
+  "ice-maroc",
+  "rib-maroc",
+  "iban-maroc",
+  "tva-maroc",
+  "simpl-tva",
+  "dgi-maroc",
+  "loi-69-21",
+  "salaire-maroc",
+  "code-postal-maroc",
+  "ompic",
+  "cnss",
+  "fastapi",
+  "morocco-fintech",
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Office/Business :: Financial :: Accounting",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+dependencies = [
+    "fastapi>=0.110.0",
+    "uvicorn[standard]>=0.28.0",
+    "pydantic>=2.6.0",
+    "qrcode>=7.4.2",
+    "pillow>=10.2.0",
+]
+
+[project.optional-dependencies]
+test = [
+    "pytest>=8.0.0",
+    "httpx>=0.27.0",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/n4ouri/morocco-fiscal-toolkit"
+"Bug Tracker" = "https://github.com/n4ouri/morocco-fiscal-toolkit/issues"
+"Documentation" = "https://github.com/n4ouri/morocco-fiscal-toolkit#readme"
+
+[project.scripts]
+morocco-fiscal-toolkit = "morocco_fiscal_toolkit.cli:main"
+maroc-fiscal = "morocco_fiscal_toolkit.cli:main"
